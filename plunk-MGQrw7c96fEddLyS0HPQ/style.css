@@ -1,0 +1,110 @@
+/* Styles go here */
+
+.page-wrap {
+  width: 800px;
+  margin: 20px auto;
+  
+  /* while I could have used a media query, it was much simpler here to just use max-width */
+  max-width: 100%;
+}
+
+.main-story {
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+img {
+  display: block; 
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+   font-size: 4em;
+}
+h1, h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em; 
+}
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  overflow: hidden;
+  margin: 0 0 25px 0;
+}
+
+.sub-story {
+  float: left;
+  width: 250px;
+  margin-right: 25px;
+  position: relative;
+  font-size: 80%;
+}
+
+.last {
+  margin-right: 0;
+}
+
+/* the most basic styling to make the page responsive was added to the page-wrap class 
+however to make things much cleaner I thought it best to add some additional styling,
+usually I would add this to the original styles, but I wanted to make sure to seperate my work
+for the purposes of this test only to make it easier on whomever is viewing the results */
+
+body * {
+  /* this will get rid of any overlapping with the story intro shadow coming outside of the image */
+  box-sizing: border-box;
+}
+  
+/* text align center to make transitions smoother with each sub story */
+.sub-stories {
+  text-align: center;
+}
+  
+.sub-story {
+  /* just to keep common bottom margin when the breakpoint hits, using the same margin as the main story */
+  margin-bottom: 25px;
+  
+  /* text align left to adjust for the wrapping text center */
+  text-align: left;
+  
+  /* by changing the float below with a media query, and changing to display inline block along with evening out the margins, it creates much cleaner transitions */
+  display: inline-block;
+}
+
+/* usually I would use standard device width for media queries but for the purpose of this test I used the page width listed above */
+@media (max-width: 805px) {
+  .sub-story {
+    float: none;
+    margin-left: 12.5px;
+    margin-right: 12.5px;
+  }
+}
+
+/* keeps main story image from extending past the story info */
+.main-story img {
+  max-width: 100%;
+}
+
+/* this was just because when it got really small the text in the main story got a bit too big */
+@media (max-width: 420px) {
+  .story-intro h1 {
+    font-size: 2em;
+  }
+}

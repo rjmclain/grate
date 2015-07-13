@@ -1,0 +1,26 @@
+/* Styles go here */
+
+#wrapper {
+    background-color: #aaffaa;
+    width: 500px;
+}
+/* by using the clearfix styles used in things like bootstrap it very easily fixes the issue
+  adding blank content that clears any floats will pull the element down appropriately */
+#wrapper:after {
+   content: " "; /* Older browser do not support empty content */
+   display: block;
+   clear: both;
+}
+
+.floater {float:left;}
+
+.one, .two {width: 100px;}
+
+.one {
+    height: 20px;
+    background-color: pink;
+}
+.two {
+    height: 100px;
+    background-color: lightblue;
+}

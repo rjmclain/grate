@@ -1,0 +1,65 @@
+/* Styles go here */
+
+/* since I only had the body and anchor tags to work with, I had to use something as a wrapper to make the 3 layer background */
+body {
+  position: relative;
+  display: block;
+  height: 80px;
+  width: 270px;
+  border: 2px solid #666666;
+  border-radius: 15px;
+}
+/* additional inner border */
+body:after {
+  content:"";
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 15px;
+  background: rgba(220,220,220,1);
+}
+
+
+a {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    color: #555555;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* padding: 20px 55px; */
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    height: 60px;
+    width: 247px;
+
+    background: rgba(220,220,220,1));
+    background: linear-gradient(to bottom, rgba(220,220,220,1) 0%, rgba(220,220,220,1) 50%, rgba(186,186,186,1) 51%, rgba(186,186,186,1) 100%);
+    
+}
+
+/* using the hex special characters, I was able to add the stars and position them relative to the wrapping element */
+a:before {
+   content: "\2605";
+   position:absolute;
+   color: rgba(136, 136, 136, 1);
+   left: 20px;
+   font-size: 30px;
+
+}
+a:after {
+   content: "\2605";
+   position:absolute;
+   color: rgba(136, 136, 136, 1);
+   right: 20px;
+   font-size: 30px;
+}
